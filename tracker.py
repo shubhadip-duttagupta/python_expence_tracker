@@ -47,7 +47,21 @@ def category_expenses():
                 total_expense = total_expense + float(row[2])
 
     print(f"{category} category wise total expense: {total_expense}")       
-            
+
+def highlow_expense():
+    high_expence = 0
+    lowest_expence = 0
+    with open(FILENAME, mode='r') as file:
+        reader = csv.reader(file)
+        next(reader)
+        for row in reader:
+            if high_expence < float(row[2]):
+                high_expence = float(row[2])
+            if lowest_expence > float(row[2]):
+                high_expence = float(row[2])
+    print(f"Highest expences : {high_expence}")
+    print(f"Lowest expences : {lowest_expence}")
+
 
 
 # Simple menu
